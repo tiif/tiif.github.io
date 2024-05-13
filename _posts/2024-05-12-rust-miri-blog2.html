@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>   </title>
+  <title>  </title>
   <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAKCgr/FRUX/xYWGP8YGBr/GRkb/xsbHP8dHR7/Hh4f/x4eIP8fHyD/ICAh/yMjJP8kJCX/JiYo/ygoKv8pKSr/LCwu/y0tLv80NDT/QUFC/0ZGR/9MTE7/UFBR/1JSUv9bW1v/XFxc/2BgYP9hYWP/aGhp/2xsbP9ycnL/d3d3/3l5e/98fHz/f3+A/2dn/P9z3a//cNX8/4CAgP+Xl5f/nZ2e/56en/+fn5//n5+h/6amp/+rq6v/rKys/7CvsP+zs7T/uLi5/7u7u/+8vLz/wMDA/8fHx//Kysr/zc3N/9HR0f/d3d3/3t7e/+Xl5f/q6ur/6+vr/+3t7f/z8/P/9fX1//b29v/39/f/+Pj4//n5+f/6+vr/+/v7//z8/P/9/f3//v7+//////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/NCYmJiYmJiYmJiYmJiYmNCZKSkpKSkpKSkpKSkpKSiYmSkpKRisdRkMbMklKSkomJkpKSSEiNUhEEQwpSUpKJiZKSi8LHhhAPAwBDDZKSiYmSkoWACA7SEc6HAEaSkomJkpKBxI/SkpKSj4ICkpKJiZKSgUTR0pKSkpGDwZKSiYmSkoTED1KSkpKOQQVSkomJkpKKgowMy4sNycIMUpKJiZKSkEZDgkDAgsNH0VKSiYmSkpKQigUBgkXLUhKSkomJkpKSkpKSkpKSkpKSkpKJiYmJiYmJiYmJiYmJiYmJiYmIyUkNDQ0NDQ0NDQ0NDQmOCYmJiYmJiYmJiYmJiYmOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" />
   <link rel="stylesheet" href="/__/grip/static/octicons/octicons.css" />
   <style>
@@ -88,7 +88,7 @@
                       <div class="Box-header d-flex border-bottom-0 flex-items-center flex-justify-between color-bg-default rounded-top-2">
                         <div class="d-flex flex-items-center">
                           <h2 class="Box-title">
-                               
+                              
                           </h2>
                         </div>
                       </div>
@@ -139,10 +139,11 @@ explained the behaviour of <code>let _ = </code>.</p>
 The difference between <code>let _a = </code> and <code>let _ = </code> is <code>let _a</code> binds the value of <code>*(ptr as *const u8)</code>
 to the variable <code>_a</code> where <code>_</code> doesn't bind it <sup><a href="#fn-2" id="user-content-fnref-2" data-footnote-ref="">2</a></sup> . Even though <code>let _ = *(ptr as *const u8);</code> is still accessing the memory pointed by <code>ptr</code>,
 we are not using the value read from the pointer or writing a value to it. I would say Miri is
-correct here as it won't cause any Undefined Behaviour.</p>
-<p>After this PR, I went down a rabbit hole (again) and read more about <a href="https://doc.rust-lang.org/nomicon/exotic-sizes.html#dynamically-sized-types-dsts" rel="nofollow">DST (Dynamic Sized Type)</a>,
+correct here as it won't cause any Undefined Behaviour.
+If anyone is interested, <a href="https://github.com/rust-lang/unsafe-code-guidelines/issues/93">This issue about zero-sized dangling access</a> is an interesting read too.</p>
+<p>After this PR, I went down a rabbit hole (again) and read more about <a href="https://doc.rust-lang.org/nomicon/exotic-sizes.html#dynamically-sized-types-dsts" rel="nofollow">DST (Dynamically Sized Type)</a>,
 <a href="https://doc.rust-lang.org/nomicon/exotic-sizes.html#zero-sized-types-zsts" rel="nofollow">ZST (Zero Sized Type)</a> and
-<code>#[no-mangle]</code>.</p>
+<code>#[no_mangle]</code>.</p>
 <div class="markdown-heading"><h3 class="heading-element">GSoC project progress</h3><a id="user-content-gsoc-project-progress" class="anchor" aria-label="Permalink: GSoC project progress" href="#gsoc-project-progress"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The exploration above happened concurrently with my actual GSoC project. In the meantime, I was unblocked after several clarifications on
 how <code>FileDescription</code>, <code>read</code> and <code>write</code> work in Miri. Currently, there are still a few more problems with the proposal waiting to be addressed,
