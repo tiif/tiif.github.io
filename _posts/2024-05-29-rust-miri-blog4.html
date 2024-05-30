@@ -117,7 +117,7 @@ flag. So <code>MacOS</code> socketpair is not fully supported for now. Most of t
 <div class="markdown-heading"><h3 class="heading-element">Moving forward</h3><a id="user-content-moving-forward" class="anchor" aria-label="Permalink: Moving forward" href="#moving-forward"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>After I finish this blog post, I am to dive into the <code>eventfd</code>
 man page and get the next design out while waiting for the PR to be reviewed.</p>
-<div class="markdown-heading"><h3 class="heading-element">Fragmented project discussion</h3><a id="user-content-fragmented-project-discussion" class="anchor" aria-label="Permalink: Fragmented project discussion" href="#fragmented-project-discussion"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">Fragmented project discussion</h2><a id="user-content-fragmented-project-discussion" class="anchor" aria-label="Permalink: Fragmented project discussion" href="#fragmented-project-discussion"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The project design evolved after multiple discussions, and the
 information started to scatter around
 <a href="https://github.com/rust-lang/miri/issues/3442">Github issue</a>,
@@ -126,7 +126,7 @@ information started to scatter around
 messy so I am trying my best to consolidate everything back to the
 <a href="https://hackmd.io/@tiif/Skhc1t0-C" rel="nofollow">intial HackMD</a>. This will make it
 easier for me to refer back to why we made certain decisions in the future.</p>
-<div class="markdown-heading"><h3 class="heading-element">How to write more rusty code</h3><a id="user-content-how-to-write-more-rusty-code" class="anchor" aria-label="Permalink: How to write more rusty code" href="#how-to-write-more-rusty-code"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">How to write more rusty code</h2><a id="user-content-how-to-write-more-rusty-code" class="anchor" aria-label="Permalink: How to write more rusty code" href="#how-to-write-more-rusty-code"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>I often encounter some code that works, but deep inside, I feel that
 the code can be more elegant and "rusty". However, many times, I don't even know
 what I am looking for and how to search for it. Having people to review
@@ -166,9 +166,8 @@ having two separate branches, so we will have:</li>
     <span class="pl-kos">}</span>
 <span class="pl-kos">}</span></pre></div>
 <ol start="2">
-<li>We can remove the loop by using <code>extend</code> to write from <code>[u8]</code>.
-to <code>VecDeque&lt;u8&gt;</code>
-</li>
+<li>We can remove the loop by using <code>extend</code> to write from <code>[u8]</code>
+to <code>VecDeque&lt;u8&gt;</code>.</li>
 </ol>
 <div class="highlight highlight-source-rust"><pre><span class="pl-k">fn</span> <span class="pl-en">write_func</span><span class="pl-kos">(</span><span class="pl-s1">write_size</span><span class="pl-kos">:</span> <span class="pl-c1">&amp;</span><span class="pl-smi">usize</span><span class="pl-kos">,</span> <span class="pl-s1">available_space</span><span class="pl-kos">:</span> <span class="pl-c1">&amp;</span><span class="pl-smi">usize</span><span class="pl-kos">,</span> <span class="pl-k">mut</span> <span class="pl-s1">vd</span><span class="pl-kos">:</span> <span class="pl-smi">VecDeque</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span><span class="pl-kos">,</span> <span class="pl-s1">bytes</span><span class="pl-kos">:</span> <span class="pl-c1">&amp;</span><span class="pl-kos">[</span><span class="pl-smi">u8</span><span class="pl-kos">]</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
     <span class="pl-k">let</span> actual_write_size<span class="pl-kos">:</span><span class="pl-smi">usize</span> = <span class="pl-c1">*</span>write_size<span class="pl-kos">.</span><span class="pl-en">min</span><span class="pl-kos">(</span>available_space<span class="pl-kos">)</span><span class="pl-kos">;</span>
@@ -191,7 +190,7 @@ like the <code>read_func</code> below?</p>
         <span class="pl-k">let</span> actual_read_size = <span class="pl-c1">*</span>read_size<span class="pl-kos">.</span><span class="pl-en">min</span><span class="pl-kos">(</span><span class="pl-c1">&amp;</span>bytesize_in_buffer<span class="pl-kos">)</span><span class="pl-kos">;</span>
         vd<span class="pl-kos">.</span><span class="pl-en">read_exact</span><span class="pl-kos">(</span><span class="pl-c1">&amp;</span><span class="pl-k">mut</span> bytes<span class="pl-kos">[</span>..actual_read_size<span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-en">unwrap</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 <span class="pl-kos">}</span></pre></div>
-<div class="markdown-heading"><h3 class="heading-element">Great Ping Storm 2.0 (Almost)</h3><a id="user-content-great-ping-storm-20-almost" class="anchor" aria-label="Permalink: Great Ping Storm 2.0 (Almost)" href="#great-ping-storm-20-almost"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h2 class="heading-element">Great Ping Storm 2.0 (Almost)</h2><a id="user-content-great-ping-storm-20-almost" class="anchor" aria-label="Permalink: Great Ping Storm 2.0 (Almost)" href="#great-ping-storm-20-almost"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>If you happen to read <a href="https://oneirical.github.io/git-hell/" rel="nofollow">blog post</a>
 by <a href="https://github.com/oneirical">@Oneirical</a>,
 this title will ring a bell.
@@ -209,10 +208,10 @@ it usually looks like this:</p>
 <li><code>git merge master</code></li>
 </ol>
 <p>But Rust Project has a <a href="https://rustc-dev-guide.rust-lang.org/git.html#no-merge-policy" rel="nofollow">No-Merge Policy</a>,
-so I decided to start to use <code>git rebase</code> more.</p>
+so I decided to start using <code>git rebase</code> more.</p>
 <p>This is what I have done:</p>
 <ol>
-<li>Repeat step 1 to 5 above</li>
+<li>Repeat step 1 to 4 above</li>
 <li><code>git rebase master</code></li>
 </ol>
 <p>Just change <code>git merge master</code> to <code>git rebase master</code>, and it will work
