@@ -148,12 +148,15 @@ for the great suggestions!</p>
 <span class="pl-kos">}</span></pre></div>
 <p>Even though the code above is not that "rusty", this is the best that I could do at that point
 in time. Before applying clippy's suggestion, I actually wrote it this way:</p>
-<div class="highlight highlight-source-rust"><pre><span class="pl-k">for</span> i <span class="pl-k">in</span> <span class="pl-c1">0</span>..available_space <span class="pl-kos">{</span>
-    vd<span class="pl-kos">.</span><span class="pl-en">push_back</span><span class="pl-kos">(</span>bytes<span class="pl-kos">[</span>i<span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>            
-<span class="pl-kos">}</span> <span class="pl-smi">else</span> <span class="pl-kos">{</span>
-    for i <span class="pl-k">in</span> <span class="pl-c1">0</span>..<span class="pl-smi">write_size</span> <span class="pl-kos">{</span>
-        vd<span class="pl-kos"></span><span class="pl-kos">.</span><span class="pl-en">push_back</span><span class="pl-kos">(</span>bytes<span class="pl-kos">[</span>i<span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
-<span class="pl-kos">}</span><span class="pl-kos"></span></pre></div>
+<div class="highlight highlight-source-rust"><pre><span class="pl-k">if</span> write_size &gt; available_space <span class="pl-kos">{</span>
+    <span class="pl-k">for</span> i <span class="pl-k">in</span> <span class="pl-c1">0</span>..available_space <span class="pl-kos">{</span>
+        vd<span class="pl-kos">.</span><span class="pl-en">push_back</span><span class="pl-kos">(</span>bytes<span class="pl-kos">[</span>i<span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>            
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span> <span class="pl-k">else</span> <span class="pl-kos">{</span>
+    <span class="pl-k">for</span> i <span class="pl-k">in</span> <span class="pl-c1">0</span>..write_size <span class="pl-kos">{</span>
+        vd<span class="pl-kos">.</span><span class="pl-en">push_back</span><span class="pl-kos">(</span>bytes<span class="pl-kos">[</span>i<span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></pre></div>
 <p>Ok, forget what you saw just now. To make this function more "rusty", the low-hanging fruit is:</p>
 <ol>
 <li>Compare the value of <code>write_size</code> and <code>available_space</code> first instead of
