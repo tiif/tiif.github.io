@@ -166,9 +166,8 @@ having two separate branches, so we will have:</li>
     <span class="pl-kos">}</span>
 <span class="pl-kos">}</span></pre></div>
 <ol start="2">
-<li>We can remove the loop by using <code>extend</code> to write from <code>[u8]</code>.
-to <code>VecDeque&lt;u8&gt;</code>
-</li>
+<li>We can remove the loop by using <code>extend</code> to write from <code>[u8]</code>
+to <code>VecDeque&lt;u8&gt;</code>.</li>
 </ol>
 <div class="highlight highlight-source-rust"><pre><span class="pl-k">fn</span> <span class="pl-en">write_func</span><span class="pl-kos">(</span><span class="pl-s1">write_size</span><span class="pl-kos">:</span> <span class="pl-c1">&amp;</span><span class="pl-smi">usize</span><span class="pl-kos">,</span> <span class="pl-s1">available_space</span><span class="pl-kos">:</span> <span class="pl-c1">&amp;</span><span class="pl-smi">usize</span><span class="pl-kos">,</span> <span class="pl-k">mut</span> <span class="pl-s1">vd</span><span class="pl-kos">:</span> <span class="pl-smi">VecDeque</span><span class="pl-kos">&lt;</span><span class="pl-smi">u8</span><span class="pl-kos">&gt;</span><span class="pl-kos">,</span> <span class="pl-s1">bytes</span><span class="pl-kos">:</span> <span class="pl-c1">&amp;</span><span class="pl-kos">[</span><span class="pl-smi">u8</span><span class="pl-kos">]</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
     <span class="pl-k">let</span> actual_write_size<span class="pl-kos">:</span><span class="pl-smi">usize</span> = <span class="pl-c1">*</span>write_size<span class="pl-kos">.</span><span class="pl-en">min</span><span class="pl-kos">(</span>available_space<span class="pl-kos">)</span><span class="pl-kos">;</span>
