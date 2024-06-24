@@ -155,21 +155,21 @@ It is really fun to
 read other participants' project updates (although it is impossible for me
 to understand every detail). The GSoC stream is a pretty happening place with
 all 9 project topics inside. Reading about their encounters of weird bugs, handling cursed
-legacy code, or making significant progress in their projects, or asking how to
+legacy code, making significant progress in their projects, or asking how to
 achieve something really gave me the feeling I am in the ideal internship (fully remote,
 writing Rust, open-source), surrounded by collegues who are passionate about what they
 are doing.</p>
 <p>Most importantly, spending the entire summer writing Rust is fun! I found myself
 growing reliant on Rust. Sometimes I felt a bit uneasy while writing C, knowing that
 I didn't have rustc, clippy or miri for autocompletion (yes, I let rustc compiles
-code that don't work for autocompletion) or guidance (sometimes the test
-that I wrote failed under miri too...).</p>
+code that doesn't work for autocompletion) or guidance (sometimes the test
+I wrote failed under miri too...).</p>
 <div class="markdown-heading"><h2 class="heading-element">About epoll</h2><a id="user-content-about-epoll" class="anchor" aria-label="Permalink: About epoll" href="#about-epoll"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Okay time to get to epoll! There are <a href="#list-of-good-article-on-epoll">quite a few good articles</a> on <code>epoll</code>,
 so this is just an attempt at explaining it (Warning: there may be errors in the explanation).</p>
 <p>Generally <code>epoll</code> syscall provides a convenient way to check if any events
 have occured to a file description. Events here include, but are not limited to input/output.</p>
-<p>Let's say with have a socket. It makes sense for us to read from it only when there
+<p>Let's say we have a socket. It makes sense for us to read from it only when there
 is data available, but we don't want to block and wait for the data. Or we may have 1000 sockets
 that we want to read from when the data is available.</p>
 <p>It is possible to use a loop to periodically check the "readiness"<sup><a href="#fn-1" id="user-content-fnref-1" data-footnote-ref="">1</a></sup> of the socket.
