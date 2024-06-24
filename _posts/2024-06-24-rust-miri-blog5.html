@@ -97,7 +97,7 @@
                       <article id="grip-content" class="markdown-body entry-content container-lg">
                         <div class="markdown-heading"><h1 class="heading-element">GSoC Miri Blog Week 5</h1><a id="user-content-gsoc-miri-blog-week-5" class="anchor" aria-label="Permalink: GSoC Miri Blog Week 5" href="#gsoc-miri-blog-week-5"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Hi everyone, I know it has been a while since I posted the last
-blogpost, so here I am!</p>
+blogpost, so here I am with the new updates!</p>
 <div class="markdown-heading"><h2 class="heading-element">Project progress</h2><a id="user-content-project-progress" class="anchor" aria-label="Permalink: Project progress" href="#project-progress"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Since the last update, a few PRs have been merged:</p>
 <ul>
@@ -133,7 +133,7 @@ was not on the initial Rust GSoC Project idea list. I took up this project becau
 it overlaps quite nicely with my personal interests, and
 this is a change that I want to see. While I did not mind not getting accepted
 to GSoC, its acceptance gave me initial assurance that this might be a change that other people might also interested in seeing.</p>
-<p>Besides, this project being a GSoC project gave me a sense of security that enough
+<p>This project being a GSoC project gave me a sense of security that enough
 time and resources would be dedicated to it. If you followed the updates
 of this project, you might realise that it usually starts with design, then
 implementation, followed by review and changes. The process involves a lot of discussion,
@@ -150,7 +150,7 @@ I also always appreciated the quick feedback and
 fast review time I received for this project. The weekly meeting was also a
 great opportunity to ask questions, get quick code reviews, and get unblocked.
 So thanks <a href="https://github.com/oli-obk">@oli</a> for dedicating time and making these possible.</p>
-<p>Furthermore, GSoC participants also have a <a href="https://rust-lang.zulipchat.com/#narrow/stream/421156-gsoc" rel="nofollow">dedicated GSoC stream</a>.
+<p>GSoC participants also have a <a href="https://rust-lang.zulipchat.com/#narrow/stream/421156-gsoc" rel="nofollow">dedicated GSoC stream</a>.
 It is really fun to
 read other participants' project updates (although it is impossible for me
 to understand every detail). The GSoC stream is a pretty happening place with
@@ -159,14 +159,14 @@ legacy code, or making significant progress in their projects, or asking how to
 achieve something really gave me the feeling I am in the ideal internship (fully remote,
 writing Rust, open-source), surrounded by collegues who are passionate about what they
 are doing.</p>
-<p>Lastly, spending the entire summer writing Rust is fun. I found myself
+<p>Most importantly, spending the entire summer writing Rust is fun! I found myself
 growing reliant on Rust. Sometimes I felt a bit uneasy while writing C, knowing that
 I didn't have rustc, clippy or miri for autocompletion (yes, I let rustc compiles
 code that don't work for autocompletion) or guidance (sometimes the test
 that I wrote failed under miri too...).</p>
 <div class="markdown-heading"><h2 class="heading-element">About epoll</h2><a id="user-content-about-epoll" class="anchor" aria-label="Permalink: About epoll" href="#about-epoll"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Okay time to get to epoll! There are <a href="#list-of-good-article-on-epoll">quite a few good articles</a> on <code>epoll</code>,
-so this is just an attempt at explaning it (Warning: there may be errors in the explanation).</p>
+so this is just an attempt at explaining it (Warning: there may be errors in the explanation).</p>
 <p>Generally <code>epoll</code> syscall provides a convenient way to check if any events
 have occured to a file description. Events here include, but are not limited to input/output.</p>
 <p>Let's say with have a socket. It makes sense for us to read from it only when there
@@ -176,9 +176,10 @@ that we want to read from when the data is available.</p>
 But this loop will waste too much CPU time on checking. That's when these I/O models
 come in handy:</p>
 <ul>
-<li>I/O multiplexing</li>
-<li>Signal-driven I/O</li>
-<li>epoll</li>
+<li>
+<strong>I/O multiplexing</strong> (i.e. <code>poll()</code> and <code>select()</code> syscalls)</li>
+<li><strong>Signal-driven I/O</strong></li>
+<li><strong>epoll</strong></li>
 </ul>
 <p>These I/O models provides a convenient way to monitor a number of file descriptor
 without actually performing I/O on it or wasting unnecessary CPU time on checking.
