@@ -145,13 +145,13 @@ With a mentor, I felt comfortable asking a wider range of question, and it can
 be unrelated to my current work. The questions I asked before included "What is the difference between
 'tcx and 'ecx lifetime?", "How Miri emulate multithreaded program despite being a
 single-threaded interpreter?" or "Why do slices and arrays work differently in certain cases?".
-These are questions that I found interesting but won't have found a chance
-to ask if I don't have a mentor.
+These are questions that I found interesting but wouldn't have had a chance to ask if I didn't have a mentor.
 I also always appreciated the quick feedback and
 fast review time I received for this project. The weekly meeting was also a
 great opportunity to ask questions, get quick code reviews, and get unblocked.
 So thanks <a href="https://github.com/oli-obk">@oli</a> for dedicating time and making these possible.</p>
-<p>Furthermore, GSoC participants also have a dedicated GSoC stream. It is really fun to
+<p>Furthermore, GSoC participants also have a <a href="https://rust-lang.zulipchat.com/#narrow/stream/421156-gsoc" rel="nofollow">dedicated GSoC stream</a>.
+It is really fun to
 read other participants' project updates (although it is impossible for me
 to understand every detail). The GSoC stream is a pretty happening place with
 all 9 project topics inside. Reading about their encounters of weird bugs, handling cursed
@@ -187,9 +187,11 @@ because I still find myself uncomfortable explaining it.</p>
 <p>The point of monitoring file descriptor is to receive notifications when
 I/O is possible. There are two ways of doing this:</p>
 <ol>
-<li>Level-triggered notification: We get a notification indicating that "this
+<li>
+<strong>Level-triggered notification:</strong> We get a notification indicating that "this
 file descriptor is ready" when it is possible to do I/O without blocking.</li>
-<li>Edge-triggered notification: We get a notification indicating that "this
+<li>
+<strong>Edge-triggered notification:</strong> We get a notification indicating that "this
 file descriptor is ready" when there is I/O activity on the file descriptor
 since we last received a notification.</li>
 </ol>
@@ -216,7 +218,7 @@ and level-triggered notification, and it also scales better than <code>poll</cod
 this blog to be longer than I prefer. I might continue
 to elaborate on it next time. If you are interested in how
 <code>epoll</code> syscall is used or going to be implemented in Miri, you could check out <a href="https://hackmd.io/@tiif/SJatftrH0" rel="nofollow">the design
-doc</a> for more infomration.</p>
+doc</a> for more information.</p>
 <p>Here is a final TL;DR that I can provide:</p>
 <ol>
 <li>
